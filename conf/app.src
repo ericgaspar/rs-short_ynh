@@ -1,5 +1,5 @@
-SOURCE_URL=url of app's source
-SOURCE_SUM=sha256 checksum
+SOURCE_URL=https://github.com/ericgaspar/rs-short_ynh/releases/download/v2.2.2/rs-short.zip
+SOURCE_SUM=b33ecf3ee20492cedc8d3eaba15f501b42ed823f04bc0fd9404e2d2112a615f5
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=zip
 SOURCE_IN_SUBDIR=true
