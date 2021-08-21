@@ -88,6 +88,7 @@ ynh_setup_source --dest_dir="$final_path"
 
 chmod 750 "$final_path"
 chmod -R o-rwx "$final_path"
+chmod +x "$final_path/target/release/rs-short"
 chown -R $app:www-data "$final_path"
 
 #=================================================
