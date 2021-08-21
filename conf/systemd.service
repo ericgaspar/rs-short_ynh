@@ -5,9 +5,9 @@ After=network.target
 
 [Service]
 Type=simple
-User=root # Maybe better with dedicated user
-WorkingDirectory=/var/www/rs-short
-ExecStart=/var/www/rs-short/target/release/rs-short
+User=__APP__
+WorkingDirectory=__FINALPATH__/
+ExecStart=__FINALPATH__/target/release/rs-short
 Restart=on-failure
 
 [Install]
