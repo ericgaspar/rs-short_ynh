@@ -1,0 +1,83 @@
+# rs-short configuration file
+# See also:
+#   - url_from_blacklist.list: Forbidden redirection names
+#   - url_to_softblacklist.list: Forbidden websites to redirect to (gentle warning)
+#   - url_to_blacklist.list: Forbidden websites to redirect to (ban / 403 forbidden)
+
+# Do not edit this manually unless you know what you are doing
+config_version = 2
+
+[general]
+
+# Address and port to listen on
+listening_address = "127.0.0.1:__PORT__"
+
+# SQLite database path
+database_path = "./db/db.sqlite"
+
+# Your (sub)domain for rs-short
+# with https://, without the trailing slash
+instance_hostname = "s.example.com"
+
+# Your name (used in various places)
+hoster_name = "ExampleSoft"
+
+# Your website
+hoster_hostname = "example.com"
+
+# Your terms of service
+hoster_tos = "https://example.com/ToS"
+
+# A link to your contact details
+# Needed to fight phishing or general purposes
+# Can be https:, mailto: or whatever
+contact = "mailto:contact@example.com"
+
+# Theme (light or dark). If you make new themes, please
+# contact us so we can add them to the main repository!
+theme = "light"
+
+# Key used to encrypt the cookie key.
+# Don't leave it empty!!
+# `openssl rand -base64 48`
+cookie_key = "__KEY__"
+
+# Find a compromise between accessibility and protection
+# against spambots. Don't forget that a good captcha **won't**
+# protect you against human spammers, and lots of them **are** human.
+# 0 = easiest / 5 = hardest
+captcha_difficulty = 3
+
+# Maximum size for the RAM-stored link cache.
+# Link cache is used as a failover in case of DB locks.
+# 0 to disable.
+# If you're using SQLite, you can increase this value.
+# Note that rs-short might take some little more RAM.
+max_cache_size = 250
+
+[phishing]
+
+# Writes every created link in console for easier monitoring
+# to fight phishing at the cost of users' privacy
+# Please use this feature with caution and consideration.
+verbose_console = false
+
+# Warns in console when there is an unusual activity on a link.
+# Needs to temporarily store user IPs and timestamps to RAM.
+verbose_suspicious = true
+
+# Per link, starting from how many clicks per suspicious_click_delay
+# a link is considered suspicious.
+# Default: Starting from 25 clicks in a timeframe of 12 hours.
+# Only if verbose_suspicious is true
+suspicious_click_count = 25
+
+# In hours.
+# See above.
+suspicious_click_timeframe = 12
+
+# Admin password to mark a link as phish link
+# example.com/<bad_link>/<secret>/phishing/<phishing_password> 
+# You must use characters that are safe to use in URLs
+# (let's say, alphanumeric characters)
+phishing_password = "edit me >///<"
